@@ -19,7 +19,6 @@ int main(void)
 
 	for (j = 48; j <= 57; j++)
 {
-
 	if (((k + j) > (c + i) &&  k >= c) || c < k)
 {
 
