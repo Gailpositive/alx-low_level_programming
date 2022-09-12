@@ -20,9 +20,9 @@ int main(void)
 	
 	if (a < b && b < c)
 {
-	
 	putchar(a + '0');
-	putchar(b + '0');					putchar(c + '0')
+	putchar(b + '0');
+	putchar(c + '0');
 
 	if (a != 7)
 {
