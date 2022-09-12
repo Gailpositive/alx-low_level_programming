@@ -11,13 +11,13 @@ int main(void)
 
 	for (a = 0; a <= 9; a++)
 {
-	
+
 	for (b = 0; b <= 9; b++)
 {
 
 	for  (c = 0; c <= 9; c++)
 {
-	
+
 	if (a < b && b < c)
 {
 	putchar(a + '0');
@@ -26,8 +26,8 @@ int main(void)
 
 	if (a != 7)
 {
-	
-	putchar(',');
+
+i	putchar(',');
 	putchar(',');
 
 }
