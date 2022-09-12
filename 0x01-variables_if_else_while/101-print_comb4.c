@@ -27,7 +27,7 @@ int main(void)
 	if (a != 7)
 {
 
-i	putchar(',');
+	putchar(',');
 	putchar(',');
 
 }
