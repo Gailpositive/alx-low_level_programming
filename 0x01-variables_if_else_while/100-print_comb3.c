@@ -6,7 +6,8 @@
 * Return: 0
 */
 int main(void)
-{i
+{
+
 	int a, b;
 
 	for (a = 0; a <= 9; a++)
