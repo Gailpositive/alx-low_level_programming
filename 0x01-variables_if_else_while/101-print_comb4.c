@@ -1,13 +1,15 @@
 #include <stdio.h>
 /**
-* main - Entry point
-* Description: This porgram prints all possible combinations
-* of a 3 digit number without repition
+* main - entry point
+* main - three digits
+*   
 * Return: 0
 */
 int main(void)
 {
-	int a, b, c;
+	int a;
+	int b;
+	int c;
 
 	for (a = 0; a <= 9; a++)
 {
@@ -18,7 +20,7 @@ int main(void)
 	for  (c = 0; c <= 9; c++)
 {
 
-	if (a < b && b < c)
+	if (c > b && b > a)
 {
 	putchar(a + '0');
 	putchar(b + '0');
