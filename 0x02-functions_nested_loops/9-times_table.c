@@ -27,7 +27,7 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
-			
+	
 			/* Add an extra space if printing single digits */
 			if (y == 9 && x == 0)
 				break;
