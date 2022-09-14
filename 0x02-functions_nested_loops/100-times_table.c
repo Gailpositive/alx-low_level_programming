@@ -7,6 +7,7 @@
 */
 void three_dig(int n)
 {
+	
 	_putchar(',');
 	_putchar(' ');
 	_putchar(n / 100 + '0');
@@ -36,7 +37,7 @@ void print_times_table(int n)
 				if (product > 99)
 				{
 					three_dig(product);
-					{
+					}
 					else if (product / 10 > 0)
 					{
 						_putchar(',');
@@ -58,4 +59,6 @@ void print_times_table(int n)
 						_putchar(product % 10 + '0');
 			}
 			_putchar('\n');
+		
+	}
 }
