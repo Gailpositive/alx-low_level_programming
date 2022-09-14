@@ -2,17 +2,39 @@
 #include "main.h"
 
 /**
-* add - This function adds two integers and returns the result
-* @a: First operand
-* @b: Second operand
-*
-* Return: the sum of the two operands
+* times_table - This function prints the 9 times table
+* starting with 0
 */
-int add(int a, int b)
+void times_table(void)
 {
-	int sum;
+	int x, y, a, b;
 
-	sum = a + b;
+	for (x = 0; x < 10; x++)
+	{
+		for (y = 0; y < 10; y++)
+		{
+			a = (x * y) / 10;
+			b = (x * y) % 10;
 
-	return (sum);
+			if ((x * y) > 9)
+				_putchar(a + '0';
+				
+			_putchar(b + '0');
+			
+			/* Don't print commas after the 10th column */
+			if (y != 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			
+			/* Add an extra space if printing single digits */
+			if (y == 9 && x == 0)
+				break;
+			else if (x * (y + 1) < 10)
+				_putchar(' ');
+		}
+		_putchar('\n');
+	}
 }
+
