@@ -7,6 +7,7 @@
 */
 void times_table(void)
 {
+
 	int x, y, a, b;
 
 	for (x = 0; x < 10; x++)
@@ -21,6 +22,7 @@ void times_table(void)
 
 			_putchar(b + '0');
 
+		
 			/* Don't print commas after the 10th column */
 			if (y != 9)
 			{
