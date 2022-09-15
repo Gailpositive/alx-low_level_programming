@@ -6,7 +6,6 @@
 */
 int main(void)
 {
-	
 	int counter = 2;
 
 	float a = 1;
