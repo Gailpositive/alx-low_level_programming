@@ -21,15 +21,15 @@ void times_table(void)
 				_putchar(a + '0');
 
 			_putchar(b + '0');
-
-		
+			
+							
 			/* Don't print commas after the 10th column */
 			if (y != 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-	
+							
 			/* Add an extra space if printing single digits */
 			if (y == 9 && x == 0)
 				break;
