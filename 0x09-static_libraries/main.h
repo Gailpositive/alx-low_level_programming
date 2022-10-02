@@ -1,7 +1,6 @@
 #ifndef MAIN.H
 #define MAIN.H
 
-
 /* this is a header file containing the prototypes of all functions */
 
 
