@@ -1,20 +1,14 @@
 #include <stdio.h>
-#include "main.h"
-
+#include <stdlib.h>
 /**
- *  main - prints its name + \n
- *  if you rename the program,it will print the new name *  without having to complie it again
- *  You should not remove the path before the name of th *  e program
+ * main - print the name of the executable.
+ * @argc: argument count or size of arguments.
+ * @argv: argument vector
  *
- *   @argc: number of arguments typed
- *   @argv: arguements vector
- *   
- *   Return: 0
+ * Return: always 0.
  */
- int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char **argv)
 {
-
-	printf("%s\n", argv[0]);
-	(void)argc;
+	printf("%s\n", *argv);
 	return (0);
 }
