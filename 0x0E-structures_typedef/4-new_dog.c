@@ -1,82 +1,83 @@
-#include "dog.h"
 #include <stdlib.h>
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
+#include "dog.h"
+
 /**
- * new_dog - function
- * @name: name of dog
- * @age: age of new doggo
- * @owner: owner of new doggo
- * Description: function to create a new dog. Store copy of name & owner
- * Return: ptr, null if fail
-*/
+ * _copy  -   Make a copy of passed in argument
+ * @src:      Data to make copy of
+ * Return:    Pointer
+ */
+
+char *_copy(char *src)
+{
+	char *ptr;
+	int i, len;
+
+	if (src == NULL)
+	{
+		return (NULL);
+	}
+
+	for (len = 0; src[len] != '\0'; len++)
+		;
+
+	ptr = malloc(sizeof(char) * (len + 1));
+
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		ptr[i] = src[i];
+	}
+
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+/**
+ * new_dog     - Create a new dog variable
+ * @name:        Name of the dog
+ * @age:         Age of the dog
+ * @owner:       Owner of the dog
+ * Return:       Pointer to new dog variable
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *nename, *neowner;
+	dog_t *snoopie;
+	char *new_name, *new_owner;
 
-	int lename, leowner;
-
-	dog_t *doggo = malloc(sizeof(dog_t));
-
-	if (doggo == NULL)
-		return (NULL);
-	_strlen(name);
-	lename = _strlen(name);
-	nename = malloc((lename + 1) * sizeof(char));
-	if (nename == NULL)
+	if (name == NULL || owner == NULL)
 	{
-		free(doggo);
 		return (NULL);
 	}
-	_strcpy(nename, name);
-	_strlen(owner);
-	leowner = _strlen(owner);
-	neowner = malloc((leowner + 1) * sizeof(char));
-	if (neowner == NULL)
+
+	snoopie = malloc(sizeof(dog_t));
+	if (snoopie == NULL)
 	{
-		free(nename);
-		free(doggo);
 		return (NULL);
 	}
-	_strcpy(neowner, owner);
-	doggo->name = nename;
-	doggo->age = age;
-	doggo->owner = neowner;
-	return (doggo);
-}
-/**
- * _strlen - function
- * @s: first operand & pointer
- * Description: function that returns the length of a string
- * Return: Always 0
-*/
-int _strlen(char *s)
-{
-	int index = 0;
 
-	while (*s != '\0')
+	new_name = _copy(name);
+	if (new_name == NULL)
 	{
-		index++;
-		s++;
+		free(snoopie);
+		return (NULL);
 	}
-	return (index);
-}
-/**
- * _strcpy - function
- * @src: copy from
- * @dest: copy to
- * Description: copies strng pnted by src to dest with null
- * Return: char
-*/
-char *_strcpy(char *dest, char *src)
-{
-	int i;
+	(*snoopie).name = new_name;
 
-	for (i = 0; src[i]; i++)
+	(*snoopie).age = age;
+
+	new_owner = _copy(owner);
+	if (new_owner == NULL)
 	{
-		dest[i] = src[i];
+		free((*snoopie).name);
+		free(snoopie);
+		return (NULL);
 	}
-	dest[i] = '\0';
-	return (dest);
+	(*snoopie).owner = new_owner;
 
+	return (snoopie);
 }
